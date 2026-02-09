@@ -1,0 +1,72 @@
+body {
+  margin: 0;
+  background: #2b2b2b;
+  font-family: monospace;
+  color: white;
+}
+
+.table {
+  height: 70vh;
+  background: radial-gradient(#5a3a1a, #2d1a0a);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#paper {
+  width: 320px;
+  height: 220px;
+  background:
+    linear-gradient(145deg, #fff, #eaeaea);
+  box-shadow:
+    0 20px 40px rgba(0,0,0,.6);
+  border-radius: 2px;
+  position: relative;
+  transform-origin: center;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+#paper::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    repeating-linear-gradient(
+      0deg,
+      rgba(0,0,0,0.02),
+      rgba(0,0,0,0.02) 1px,
+      transparent 1px,
+      transparent 2px
+    );
+  pointer-events: none;
+}
+
+#text {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  color: #444;
+  font-size: 14px;
+}
+
+.controls {
+  padding: 20px;
+  background: #111;
+  border-top: 1px solid #333;
+}
+
+.controls h2 {
+  margin-top: 0;
+}
+
+.fail {
+  animation: shake 0.4s;
+  background: #ccc !important;
+}
+
+@keyframes shake {
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(2deg); }
+  50% { transform: rotate(-2deg); }
+  100% { transform: rotate(0deg); }
+}
